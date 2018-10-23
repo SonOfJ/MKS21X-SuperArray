@@ -1,12 +1,12 @@
 public class SuperArray{
-  private String data;
+  private String[] data;
   private int size;
-  public SuperArray(String go, int length) {
+  public SuperArray(String[] go, int length) {
     data = go;
     size = length;
   }
   public void clear() {
-    data = "";
+    data = new String[0];
   }
   public int size() {
     return size;

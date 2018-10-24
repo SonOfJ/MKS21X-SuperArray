@@ -18,4 +18,15 @@ public class SuperArray{
     data[size] = element;
     return true;
   }
+  public String toString() {
+    String kai = "";
+    for(int i = 0; i < size; i = i + 1) {
+      if (i == size - 1) {
+        kai = kai + data[i];
+      } else {
+        kai = kai + data[i] + ", ";
+      }
+    }
+    return kai;
+  }
 }

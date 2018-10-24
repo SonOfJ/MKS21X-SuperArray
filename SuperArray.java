@@ -14,4 +14,8 @@ public class SuperArray{
   public boolean isEmpty() {
     return size == 0;
   }
+  public boolean add(String element) {
+    data[size] = element;
+    return true;
+  }
 }

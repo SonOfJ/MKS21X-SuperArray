@@ -29,4 +29,11 @@ public class SuperArray{
     }
     return kai;
   }
+  public String get(int index) {
+    if (0 <= index && index < size) {
+      return data[index];
+    } else {
+      return "null";
+    }
+  }
 }

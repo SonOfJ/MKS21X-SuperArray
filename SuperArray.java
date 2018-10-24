@@ -36,4 +36,13 @@ public class SuperArray{
       return "null";
     }
   }
+  public String set(int index, String element) {
+    String a = data[index];
+    if (0 <= index && index < size) {
+      data[index] = element;
+      return a;
+    } else {
+      return "null";
+    }
+  }
 }

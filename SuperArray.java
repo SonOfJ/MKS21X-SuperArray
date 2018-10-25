@@ -70,4 +70,12 @@ public class SuperArray{
       return "null";
     }
   }
+  private void resize() {
+    String[] shake = new String[data.length + 1];
+    for(int i = 0; i < data.length; i = i + 1) {
+      shake[i] = data[i];
+    }
+    SuperArray king = new SuperArray(shake, size);
+    this = king;
+  }
 }

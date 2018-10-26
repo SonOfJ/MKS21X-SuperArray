@@ -80,4 +80,10 @@ public class SuperArray{
     }
     data = shake;
   }
+  public boolean contains(String target) {
+    for(int i = 0; i < size; i = i + 1) {
+      return data[i] == target;
+    }
+    return false;
+  }
 }

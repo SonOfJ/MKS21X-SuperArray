@@ -75,7 +75,6 @@ public class SuperArray{
     for(int i = 0; i < data.length; i = i + 1) {
       shake[i] = data[i];
     }
-    SuperArray king = new SuperArray(shake, size);
-    this = king;
+    data = shake;
   }
 }

@@ -82,14 +82,14 @@ public class SuperArray{
   }
   public boolean contains(String target) {
     for(int i = 0; i < size; i = i + 1) {
-      return data[i] == target;
+      return data[i].equals(target);
     }
     return false;
   }
   public int indexOf(String target) {
     int count = 0;
     for (int i = 0; i < size; i = i + 1) {
-      if (data[i] == target) {
+      if (data[i].equals(target)) {
         return count;
       } else {
         count = count + 1;
@@ -112,5 +112,21 @@ public class SuperArray{
       }
       data = kami;
     }
+  }
+  public String remove(int index) {
+    if (index < 0 || index > size()) {
+      return "null";
+    } else {
+      size = size - 1;
+      String[] locus = new String[data.length - 1];
+      for(int i = 0; i < index; i = i + 1) {
+        locus[i] = data[i];
+      }
+      for(int i = index; i < size - 1; i = i + 1) {
+        locus[i] = data[i + 1];
+      }
+      data = locus;
+    }
+    return "IT HAS BEEN DONE";
   }
 }

@@ -21,6 +21,9 @@ public class SuperArray{
     return size == 0;
   }
   public boolean add(String element) {
+    if (size == data.length) {
+      resize();
+    }
     data[size] = element;
     return true;
   }

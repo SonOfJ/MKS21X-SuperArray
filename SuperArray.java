@@ -86,4 +86,15 @@ public class SuperArray{
     }
     return false;
   }
+  public int indexOf(String target) {
+    int count = 0;
+    for (int i = 0; i < size; i = i + 1) {
+      if (data[i] == target) {
+        return count;
+      } else {
+        count = count + 1;
+      }
+    }
+    return -1;
+  }
 }

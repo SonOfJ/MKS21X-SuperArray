@@ -1,16 +1,9 @@
 public class SuperArray{
   private String[] data;
   private int size;
-  public SuperArray(String[] go) {
-    data = go;
-    int count = 0;
-    for(int i = 0; i < go.length; i = i + 1) {
-      if (go[i] != null) {
-        count = count + 1;
-      }
-    }
-    size = count;
-  }
+  public SuperArray() {
+    data = new String[10];
+  }  
   public void clear() {
     data = new String[0];
   }

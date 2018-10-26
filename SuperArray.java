@@ -129,4 +129,12 @@ public class SuperArray{
     }
     return "IT HAS BEEN DONE";
   }
+  public boolean remove(String element) {
+    if (contains(element)) {
+      remove(indexOf(element));
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

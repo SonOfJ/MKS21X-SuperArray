@@ -108,19 +108,20 @@ public class SuperArray{
     if (index < 0 || index > size()) {
       System.out.println( "ERROR");
     } else {
-      resize();
+      size = size + 1;
       String[] kami = new String[data.length + 1];
       for(int i = 0; i < index; i = i + 1) {
         kami[i] = data[i];
       }
       kami[index] = element;
-      for (int i = index ; i < size + 1; i = i + 1) {
+      for (int i = index; i < size + 1; i = i + 1) {
         kami[i + 1] = data[i];
       }
       data = kami;
     }
   }
   public String remove(int index) {
+    String a = data[index];
     if (index < 0 || index > size()) {
       return "null";
     } else {
@@ -129,12 +130,12 @@ public class SuperArray{
       for(int i = 0; i < index; i = i + 1) {
         locus[i] = data[i];
       }
-      for(int i = index; i < size - 1; i = i + 1) {
+      for(int i = index; i < data.length - 1; i = i + 1) {
         locus[i] = data[i + 1];
       }
       data = locus;
     }
-    return "IT HAS BEEN DONE";
+    return a;
   }
   public boolean remove(String element) {
     if (contains(element)) {

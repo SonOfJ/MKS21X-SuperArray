@@ -34,15 +34,15 @@ public class SuperArray{
   }
   public String toStringDebug() {
     String kai = "[";
-    for(int i = 0; i < size; i = i + 1) {
+    for(int i = 0; i < data.length; i = i + 1) {
       if (data[i] != null) {
-        if (i == size - 1) {
+        if (i == data.length - 1) {
           kai = kai + data[i] + "]";
         } else {
           kai = kai + data[i] + ", ";
         }
       } else {
-        if (i == size - 1) {
+        if (i == data.length - 1) {
           kai = kai + "null" + "]";
         } else {
           kai = kai + "null" + ", ";

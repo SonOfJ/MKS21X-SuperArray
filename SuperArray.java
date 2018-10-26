@@ -68,7 +68,7 @@ public class SuperArray{
     }
   }
   private void resize() {
-    String[] shake = new String[data.length + 1];
+    String[] shake = new String[size * 2];
     for(int i = 0; i < data.length; i = i + 1) {
       shake[i] = data[i];
     }

@@ -97,6 +97,17 @@ public class SuperArray{
     }
     return -1;
   }
+  public int lastIndexOf(String target) {
+    int count = size - 1;
+    for (int i = size - 1; i > -1; i = i - 1) {
+      if (data[i].equals(target)) {
+        return count;
+      } else {
+        count = count - 1;
+      }
+    }
+    return -1;
+  }
   public void add(int index, String element) {
     if (index < 0 || index > size()) {
       System.out.println( "ERROR");

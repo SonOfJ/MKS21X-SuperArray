@@ -3,7 +3,7 @@ public class SuperArray{
   private int size;
   public SuperArray() {
     data = new String[10];
-  }  
+  }
   public void clear() {
     data = new String[0];
   }
@@ -18,6 +18,7 @@ public class SuperArray{
       resize();
     }
     data[size] = element;
+    size = size + 1;
     return true;
   }
   public String toString() {

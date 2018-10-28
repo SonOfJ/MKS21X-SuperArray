@@ -52,12 +52,18 @@ public class SuperArray{
     return kai;
   }
   public String get(int index) {
-    if (0 <= index && index < size) {
-      return data[index];
-    } else {
-      return "indexOutOfBoundsException";
+    try {
+      if (index < 0 || index >= size) {
+        throw new IndexOutOfBoundsException("Invalid index, can't initiate get command");
+      }
     }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("Caught a problem in get(int index)");
+      throw e;
+    }
+    return data[index];
   }
+
   public String set(int index, String element) {
     String a = data[index];
     if (0 <= index && index < size) {
@@ -110,9 +116,9 @@ public class SuperArray{
         throw new IndexOutOfBoundsException("Invalid index, can't initiate add command");
       }
     }
-    catch(IndexOutOfBoundsException a) {
+    catch(IndexOutOfBoundsException e) {
       System.out.println("Caught a problem in add(int, string)");
-      throw a;
+      throw e;
     }
     size = size + 1;
     String[] kami = new String[data.length + 1];
@@ -132,9 +138,9 @@ public class SuperArray{
         throw new IndexOutOfBoundsException("Invalid index, can't initiate remove command");
       }
     }
-    catch(IndexOutOfBoundsException k) {
+    catch(IndexOutOfBoundsException e) {
       System.out.println("Caught a problem in remove(int index)");
-      throw k;
+      throw e;
     }
     size = size - 1;
     String[] locus = new String[data.length - 1];

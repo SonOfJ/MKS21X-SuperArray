@@ -55,7 +55,7 @@ public class SuperArray{
     if (0 <= index && index < size) {
       return data[index];
     } else {
-      return "null";
+      return "indexOutOfBoundsException";
     }
   }
   public String set(int index, String element) {
@@ -64,7 +64,7 @@ public class SuperArray{
       data[index] = element;
       return a;
     } else {
-      return "null";
+      return "indexOutOfBoundsException";
     }
   }
   private void resize() {
@@ -106,7 +106,7 @@ public class SuperArray{
   }
   public void add(int index, String element) {
     if (index < 0 || index > size()) {
-      System.out.println( "ERROR");
+      System.out.println( "indexOutOfBoundsException");
     } else {
       size = size + 1;
       String[] kami = new String[data.length + 1];
@@ -123,7 +123,7 @@ public class SuperArray{
   public String remove(int index) {
     String a = data[index];
     if (index < 0 || index > size()) {
-      return "null";
+      return "indexOutOfBoundsException";
     } else {
       size = size - 1;
       String[] locus = new String[data.length - 1];

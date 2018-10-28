@@ -105,20 +105,25 @@ public class SuperArray{
     return -1;
   }
   public void add(int index, String element) {
-    if (index < 0 || index > size()) {
-      System.out.println( "indexOutOfBoundsException");
-    } else {
-      size = size + 1;
-      String[] kami = new String[data.length + 1];
-      for(int i = 0; i < index; i = i + 1) {
-        kami[i] = data[i];
+    try {
+      if (index < 0 || index > size()) {
+        throw new IndexOutOfBoundsException("Invalid index");
       }
-      kami[index] = element;
-      for (int i = index; i < size + 1; i = i + 1) {
-        kami[i + 1] = data[i];
-      }
-      data = kami;
     }
+    catch(IndexOutOfBoundsException a) {
+      System.out.println("Caught a problem in add(int, string)");
+      throw a;
+    }
+    size = size + 1;
+    String[] kami = new String[data.length + 1];
+    for(int i = 0; i < index; i = i + 1) {
+      kami[i] = data[i];
+    }
+    kami[index] = element;
+    for (int i = index; i < size + 1; i = i + 1) {
+      kami[i + 1] = data[i];
+    }
+    data = kami;
   }
   public String remove(int index) {
     String a = data[index];

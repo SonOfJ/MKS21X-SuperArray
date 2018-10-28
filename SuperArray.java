@@ -66,12 +66,17 @@ public class SuperArray{
 
   public String set(int index, String element) {
     String a = data[index];
-    if (0 <= index && index < size) {
-      data[index] = element;
-      return a;
-    } else {
-      return "indexOutOfBoundsException";
+    try {
+      if (index < 0 || index >= size) {
+        throw new IndexOutOfBoundsException("Invalid index, can't initiate set command");
+      }
     }
+    catch(IndexOutOfBoundsException e) {
+      System.out.println("Caught a problem in set(int index, String element)");
+      throw e;
+    }
+    data[index] = element;
+    return a;
   }
   private void resize() {
     String[] shake = new String[size * 2];

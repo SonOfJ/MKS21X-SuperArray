@@ -107,7 +107,7 @@ public class SuperArray{
   public void add(int index, String element) {
     try {
       if (index < 0 || index > size()) {
-        throw new IndexOutOfBoundsException("Invalid index");
+        throw new IndexOutOfBoundsException("Invalid index, can't initiate add command");
       }
     }
     catch(IndexOutOfBoundsException a) {
@@ -127,19 +127,24 @@ public class SuperArray{
   }
   public String remove(int index) {
     String a = data[index];
-    if (index < 0 || index > size()) {
-      return "indexOutOfBoundsException";
-    } else {
-      size = size - 1;
-      String[] locus = new String[data.length - 1];
-      for(int i = 0; i < index; i = i + 1) {
-        locus[i] = data[i];
+    try {
+      if (index < 0 || index > size()) {
+        throw new IndexOutOfBoundsException("Invalid index, can't initiate remove command");
       }
-      for(int i = index; i < data.length - 1; i = i + 1) {
-        locus[i] = data[i + 1];
-      }
-      data = locus;
     }
+    catch(IndexOutOfBoundsException k) {
+      System.out.println("Caught a problem in remove(int index)");
+      throw k;
+    }
+    size = size - 1;
+    String[] locus = new String[data.length - 1];
+    for(int i = 0; i < index; i = i + 1) {
+      locus[i] = data[i];
+    }
+    for(int i = index; i < data.length - 1; i = i + 1) {
+      locus[i] = data[i + 1];
+    }
+    data = locus;
     return a;
   }
   public boolean remove(String element) {

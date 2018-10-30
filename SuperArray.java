@@ -18,6 +18,7 @@ public class SuperArray{
   }
   public void clear() {
     data = new String[0];
+    size = 0;
   }
   public int size() {
     return size;
@@ -35,6 +36,9 @@ public class SuperArray{
   }
   public String toString() {
     String kai = "[";
+    if (size == 0) {
+      kai = kai + "]";
+    }
     for(int i = 0; i < size; i = i + 1) {
       if (i == size - 1) {
         kai = kai + data[i] + "]";
